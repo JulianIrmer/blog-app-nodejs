@@ -1,7 +1,7 @@
 const express = require('express');
 const cors = require('cors');
 const mongojs = require('mongojs');
-const port = process.env.PORT || 5000;
+const PORT = process.env.PORT || 5000;
 const DB_URL = 'mongodb://Holly:ikou05667@ds123614.mlab.com:23614/hollydb'
 let seqID = 1;
 
@@ -26,10 +26,6 @@ server.use(cors());
 
 //load html/css/js from public folder
 server.use(express.static("public"));
-
-server.get('/', (req, res) => {
-  res.sendStatus(200);
-});
 
 //get all posts
 server.get('/api', (req, res) => {
@@ -79,7 +75,7 @@ server.post('/api/delete/:id', (req, res) => {
 });
 
 //starting the server
-server.listen(process.env.PORT, () => {
-  console.log('Server listening on port '+process.env.PORT);
+server.listen(PORT, () => {
+  console.log('Server listening on port '+PORT);
 });
 
