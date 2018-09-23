@@ -24,9 +24,9 @@ const server = express();
 server.use(express.json());
 server.use(cors());
 
-server.get('/', (req, res) => {
-  res.json({message: 'Hello World'});
-});
+// server.get('/', (req, res) => {
+//   res.json({message: 'Hello World'});
+// });
 
 //load html/css/js from public folder
 server.use(express.static("public"));
