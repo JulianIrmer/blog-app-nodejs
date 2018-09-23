@@ -24,7 +24,7 @@ const server = express();
 server.use(express.json());
 server.use(cors());
 
-server.get('/', () => {
+server.get('/', (req, res) => {
   res.json({message: 'Hello World'});
 });
 
