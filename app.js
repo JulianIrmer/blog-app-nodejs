@@ -27,6 +27,10 @@ server.use(cors());
 //load html/css/js from public folder
 server.use(express.static("public"));
 
+server.get('/', (req, res) => {
+  res.sendStatus(200);
+});
+
 //get all posts
 server.get('/api', (req, res) => {
   db.posts.find((err, posts) => {
