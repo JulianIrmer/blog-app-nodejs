@@ -93,7 +93,6 @@ function loadAllPosts() {
         //add the 'delete a single post'-function
         delBtn.addEventListener('click', (delBtn) => {
           let postid = delBtn.path[0].id
-          console.log(API_DELETE_ID+postid);
           fetch(API_DELETE_ID+postid, {
             method: 'POST',
             headers: {
@@ -114,18 +113,5 @@ function loadAllPosts() {
       });
   });
 };
-
-
-
-//delete all posts from mongobdb
-// function deleteAll() {
-//   console.log('del');
-//   fetch(API_DELETE_ALL, {
-//     method: 'POST',
-//     headers: {
-//       'content-type':'application/json'
-//     }
-//   });
-// };
 
 
