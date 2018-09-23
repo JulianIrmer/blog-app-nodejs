@@ -75,7 +75,7 @@ server.post('/api/delete/:id', (req, res) => {
 });
 
 //starting the server
-server.listen(port, () => {
-  console.log('Server listening on port '+port);
+server.listen(process.env.PORT, () => {
+  console.log('Server listening on port '+process.env.PORT);
 });
 
