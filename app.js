@@ -1,7 +1,7 @@
 const express = require('express');
 const cors = require('cors');
 const mongojs = require('mongojs');
-const port = 5000 || process.env.PORT;
+const port = process.env.PORT || 5000;
 const DB_URL = 'mongodb://Holly:ikou05667@ds123614.mlab.com:23614/hollydb'
 let seqID = 1;
 
