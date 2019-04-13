@@ -1,10 +1,10 @@
 const form = document.querySelector('form');
 const postsElement = document.querySelector('.posts');
-const API_GET_ALL = 'http://localhost:5000/api';
-const API_SEND = 'http://localhost:5000/api/send';
-const API_DELETE_ALL = 'http://localhost:5000/api/delete';
-const API_DELETE_ID = 'http://localhost:5000/api/delete/';
-const API_MAXID = 'http://localhost:5000/api/maxid';
+const API_GET_ALL = '/api';
+const API_SEND = '/api/send';
+const API_DELETE_ALL = '/api/delete';
+const API_DELETE_ID = '/api/delete/';
+const API_MAXID = '/api/maxid';
 let id;
 let allData;
 
