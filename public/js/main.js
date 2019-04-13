@@ -1,10 +1,10 @@
 const form = document.querySelector('form');
 const postsElement = document.querySelector('.posts');
-const API_GET_ALL = '/api';
-const API_SEND = '/api/send';
-const API_DELETE_ALL = '/api/delete';
-const API_DELETE_ID = '/api/delete/';
-const API_MAXID = '/api/maxid';
+const API_GET_ALL = 'http://localhost:5000/api';
+const API_SEND = 'http://localhost:5000/api/send';
+const API_DELETE_ALL = 'http://localhost:5000/api/delete';
+const API_DELETE_ID = 'http://localhost:5000/api/delete/';
+const API_MAXID = 'http://localhost:5000/api/maxid';
 let id;
 let allData;
 
@@ -18,9 +18,11 @@ function getMaxID(){
 
 form.addEventListener('submit', (event) => {
   event.preventDefault();
-  const formData = new FormData(form);
-  const title = formData.get('title');
-  const content = formData.get('content');
+  // const formData = new FormData(form);
+  // const title = formData.get('title');
+  // const content = formData.get('content');
+  const title = document.querySelector('#title').value;
+  const content = document.querySelector('#content').value;
   const time = new Date().toLocaleTimeString();
   const date = new Date().toLocaleDateString();
   
@@ -55,7 +57,7 @@ function loadAllPosts() {
   postsElement.innerHTML = '';
   fetch(API_GET_ALL)
     .then((response) => {
-      return response.json();
+        return response.json();
     })
     .then((allPosts) => {
       allPosts.reverse();
@@ -92,7 +94,7 @@ function loadAllPosts() {
 
         //add the 'delete a single post'-function
         delBtn.addEventListener('click', (delBtn) => {
-          let postid = delBtn.path[0].id
+          let postid = delBtn.path[0].id;
           fetch(API_DELETE_ID+postid, {
             method: 'POST',
             headers: {
